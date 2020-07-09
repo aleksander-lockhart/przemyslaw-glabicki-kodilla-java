@@ -19,37 +19,31 @@ public class CollectionTestSuite {
         public void testOddNumbersExterminatorEmptyList() {
             //Given
             OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
-            ArrayList<Integer> numbersList = new ArrayList<>();
+            ArrayList<Integer> numbersList1 = new ArrayList<>();
 
             //When
-            numbersExterminator.exterminate(numbersList);
+            ArrayList<Integer> dividedList = numbersExterminator.exterminate(numbersList1);
 
             //Then
             System.out.println("Testing for empty list");
-            Assert.assertEquals(0, numbersList.size());
+            Assert.assertEquals(0, dividedList.size());
         }
 
         @Test
         public void testOddNumbersExterminatorNormalList() {
             //Given
             OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
-            Random addNumber = new Random();
-            ArrayList<Integer> numbersList = new ArrayList<>();
-            for(int i=0; i<100; i++) {
-                numbersList.add(addNumber.nextInt(100));
-            }
+            ArrayList<Integer> numbersList2 = new ArrayList<>();
+            numbersList2.add(2);
+            numbersList2.add(4);
+            numbersList2.add(3);
+            numbersList2.add(5);
             //When
-            numbersExterminator.exterminate(numbersList);
+            ArrayList<Integer> dividedList2 = numbersExterminator.exterminate(numbersList2);
 
-            ArrayList<Integer>evenList = new ArrayList<>();
-            for (Integer checkEven : numbersList) {
-                if (checkEven % 2 == 0) {
-                    evenList.remove(checkEven);
-                }
-            }
             //Then
-            System.out.println("Check if list got only Even numbers, remove all %2");
-            Assert.assertEquals(0, evenList.size());
+
+            Assert.assertEquals(2, dividedList2.size());
         }
 
 }
