@@ -118,6 +118,25 @@ public class CalculateAdvStatisticsTestSuite {
         Assert.assertEquals(100, compute.getUserQnt(), 0);
     }
 
+    @Test
+    public void testCommentAndPostPerUser() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        ForumStatistics compute = new ForumStatistics(statisticsMock);
+        ArrayList<String> users = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            users.add("User" + i);
+        }
+        when(statisticsMock.usersNames()).thenReturn(users);
+        when(statisticsMock.postsCount()).thenReturn(100);
+        when(statisticsMock.commentsCount()).thenReturn(20);
+
+        //When
+        compute.calculateAdvStatistics();
+        //Then
+        Assert.assertEquals(20, compute.getPostPerUser(), 0);
+        Assert.assertEquals(4, compute.getCommentPerUser(), 0);
+    }
 
 
 

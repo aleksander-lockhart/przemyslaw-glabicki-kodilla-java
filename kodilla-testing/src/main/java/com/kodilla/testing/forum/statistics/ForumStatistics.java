@@ -19,10 +19,10 @@ public class ForumStatistics {
         commentsQnt = statistics.commentsCount();
         postPerUser = ((double)statistics.postsCount()) / statistics.usersNames().size();
 
-        if (commentPerUser == 0) {
+        if (commentsQnt == 0) {
             commentPerUser = 0;
         } else {
-            commentPerUser = ((double)statistics.usersNames().size()) / userQnt;
+            commentPerUser = ((double)commentsQnt / statistics.usersNames().size());
             }
 
         if (postsQnt == 0) {
