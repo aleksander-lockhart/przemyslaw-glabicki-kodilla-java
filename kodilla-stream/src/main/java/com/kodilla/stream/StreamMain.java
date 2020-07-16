@@ -15,7 +15,7 @@ public class StreamMain {
 
         poemBeautifier.decorator("text to upper", String::toUpperCase);
         poemBeautifier.decorator("TEXT TO LOWER", String::toLowerCase);
-        poemBeautifier.decorator("Text to improve", improve -> "ABC" + improve + "ABC");
+        poemBeautifier.decorator("Text to improve", textToChange -> "ABC" + textToChange + "ABC");
 
 
 //        Processor processor = new Processor();
