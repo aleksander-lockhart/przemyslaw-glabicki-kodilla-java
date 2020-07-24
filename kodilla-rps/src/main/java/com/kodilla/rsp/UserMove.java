@@ -24,6 +24,10 @@ public class UserMove {
                     break;
                 case "n":
                     return GameLogic.newgame;
+                default:
+                    System.out.println("Please select the correct option!");
+                    System.out.println("Select one: 1 - Rock, 2 - Paper, 3 - Scissors");
+                    System.out.println("x - for exit, n - for next game");
 
             }
         }
