@@ -70,13 +70,13 @@ public class RPS {
 
 
                 if (playerScore == userInput.getHowManyGames()) {
-                    System.out.println(userInput.getName() + " has won with "
+                    System.out.println(userInput.getName() + " has won with: "
                             + userInput.getHowManyGames());
                     printStats();
                     UserInput.newGame();
                 }
                 if (aiScore == userInput.getHowManyGames()) {
-                    System.out.println("Computer " + " has won with "
+                    System.out.println("Computer " + " has won with: "
                             + userInput.getHowManyGames());
                     printStats();
                     UserInput.newGame();
@@ -88,8 +88,8 @@ public class RPS {
     public void printStats() {
         System.out.println("\n" + "------------------------------------------");
         System.out.println("Number of games played: " + gamesCounter);
-        System.out.println(userInput.getName() +"'s score " + playerScore);
-        System.out.println("Computers score " + aiScore);
+        System.out.println(userInput.getName() +"'s score: " + playerScore);
+        System.out.println("Computers score: " + aiScore);
         System.out.println("\n" + "------------------------------------------");
     }
 }
