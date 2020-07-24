@@ -22,7 +22,7 @@ public class RPS {
         userInput = new UserInput();
         playerScore = 0;
         aiScore = 0;
-        gamesCounter = 1;
+        gamesCounter = 0;
     }
 
     public void runRPS() {
@@ -36,65 +36,55 @@ public class RPS {
         while (userInput.getHowManyGames() > playerScore && userInput.getHowManyGames() > aiScore) {
             int playerSelect = user.userInput();
 
-            if (playerSelect == GameLogic.newgame)
-            {
-                playerScore = 0;
-                aiScore = 0;
-                gamesCounter = 1;
-                continue;
-            }
+            if (playerSelect == GameLogic.newgame) {
+                UserInput.newGame();
+            } else if (playerSelect == GameLogic.exit) {
+                UserInput.quit();
 
-            if (playerSelect == GameLogic.exit) {
-                break;
-            }
+            } else {
 
-            GameLogic.gameLogic(userInput.getName(), playerSelect);
-            int aiSelect = ai.aiRandomMove();
-            GameLogic.gameLogic("AI", aiSelect);
-            int checkWhoWins = GameLogic.compareAiAndPlayerMoves(playerSelect, aiSelect);
+                GameLogic.gameLogic(userInput.getName(), playerSelect);
+                int aiSelect = ai.aiRandomMove();
+                GameLogic.gameLogic("AI", aiSelect);
+                int checkWhoWins = GameLogic.compareAiAndPlayerMoves(playerSelect, aiSelect);
 
-            switch (checkWhoWins) {
-                case 0:
-                    System.out.println("Tie!");
+                switch (checkWhoWins) {
+                    case 0:
+                        System.out.println("Tie!");
+                        printStats();
+                        break;
+                    case 1:
+                        System.out.println(userInput.getName() + " beats "
+                                + "AI" + " You won!");
+                        playerScore++;
+                        printStats();
+                        break;
+                    case -1:
+                        System.out.println("AI" + " beats "
+                                + userInput.getName() + " You Lost!");
+                        aiScore++;
+                        printStats();
+                        break;
+                }
+                gamesCounter++;
+
+
+                if (playerScore == userInput.getHowManyGames()) {
+                    System.out.println(userInput.getName() + " has won with "
+                            + userInput.getHowManyGames());
                     printStats();
-                    break;
-                case 1:
-                    System.out.println(userInput.getName() + " beats "
-                            + "AI" + " You won!");
-                    playerScore++;
+                    UserInput.newGame();
+                }
+                if (aiScore == userInput.getHowManyGames()) {
+                    System.out.println("Computer " + " has won with "
+                            + userInput.getHowManyGames());
                     printStats();
-                    break;
-                case -1:
-                    System.out.println("AI" + " beats "
-                            + userInput.getName() + " You Lost!");
-                    aiScore++;
-                    printStats();
-                    break;
-            }
-            gamesCounter++;
+                    UserInput.newGame();
+                }
 
-            if (playerScore == userInput.getHowManyGames()) {
-                System.out.println(userInput.getName() + " has won with "
-                        + userInput.getHowManyGames());
-                new RPSMain();
             }
-            if (aiScore == userInput.getHowManyGames()) {
-                System.out.println("Computer " + " has won with "
-                        + userInput.getHowManyGames());
-                new RPSMain();
-            }
-        }
-
-        if (userInput.playAgain()) {
-            RPS rps = new RPS();
-            rps.getPlayerName();
-            rps.getHowManyGamesToPlay();
-            rps.startRSP();
-        } else {
-            printStats();
         }
     }
-
     public void printStats() {
         System.out.println("\n" + "------------------------------------------");
         System.out.println("Number of games played is " + gamesCounter);

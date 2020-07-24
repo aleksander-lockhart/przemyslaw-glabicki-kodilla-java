@@ -1,5 +1,7 @@
 package com.kodilla.rsp;
 
+import java.util.Scanner;
+
 public class GameLogic {
 
     public static final int rock = 1;

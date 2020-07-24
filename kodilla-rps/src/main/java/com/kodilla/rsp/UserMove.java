@@ -21,7 +21,7 @@ public class UserMove {
                 case "3":
                     return GameLogic.scissors;
                 case "x":
-                    break;
+                    return GameLogic.exit;
                 case "n":
                     return GameLogic.newgame;
                 default:
