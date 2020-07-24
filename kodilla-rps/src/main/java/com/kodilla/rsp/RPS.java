@@ -87,7 +87,7 @@ public class RPS {
     }
     public void printStats() {
         System.out.println("\n" + "------------------------------------------");
-        System.out.println("Number of games played is " + gamesCounter);
+        System.out.println("Number of games played: " + gamesCounter);
         System.out.println(userInput.getName() +"'s score " + playerScore);
         System.out.println("Computers score " + aiScore);
         System.out.println("\n" + "------------------------------------------");
