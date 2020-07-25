@@ -22,7 +22,7 @@ public class RPS {
         userInput = new UserInput();
         playerScore = 0;
         aiScore = 0;
-        gamesCounter = 0;
+        gamesCounter = 1;
     }
 
     public void runRPS() {
