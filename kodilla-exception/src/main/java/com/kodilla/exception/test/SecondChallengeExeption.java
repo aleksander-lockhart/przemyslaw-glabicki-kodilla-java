@@ -1,4 +1,4 @@
 package com.kodilla.exception.test;
 
-public class SecondChallengeExeption extends Exception{
+public class SecondChallengeExeption extends Exception {
 }

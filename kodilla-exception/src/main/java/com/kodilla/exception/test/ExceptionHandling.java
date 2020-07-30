@@ -9,7 +9,7 @@ public class ExceptionHandling {
 
         try {
             result = secondChallenge.probablyIWillThrowException(3.0, 2.0);
-            System.out.println(result);
+            System.out.println(result);     
 
         } catch (SecondChallengeExeption e) {
             System.out.println("Check numbers, error: " + e);
