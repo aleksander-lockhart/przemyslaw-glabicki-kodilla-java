@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges.flightsearch;
 
+import java.util.Objects;
+
 public final class Flight {
     final private String departureAirport;
     final private String arrivalAirport;
@@ -24,9 +26,9 @@ public final class Flight {
 
         Flight flight = (Flight) o;
 
-        if (departureAirport != null ? !departureAirport.equals(flight.departureAirport) : flight.departureAirport != null)
+        if (!Objects.equals(departureAirport, flight.departureAirport))
             return false;
-        return arrivalAirport != null ? arrivalAirport.equals(flight.arrivalAirport) : flight.arrivalAirport == null;
+        return Objects.equals(arrivalAirport, flight.arrivalAirport);
     }
 
     @Override

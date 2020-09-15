@@ -3,21 +3,15 @@ package com.kodilla.good.patterns.challenges.food2door;
 import java.time.LocalDateTime;
 
 public class SupplierOrderRequest {
-    public Supplier supplier;
-    public LocalDateTime when;
+    private final Supplier supplier;
 
-
-    public SupplierOrderRequest(Supplier supplier, LocalDateTime when) {
+    public SupplierOrderRequest(final Supplier supplier) {
         this.supplier = supplier;
-        this.when = when;
+
     }
 
     public Supplier getSupplier() {
         return supplier;
-    }
-
-    public LocalDateTime getWhen() {
-        return when;
     }
 
 }

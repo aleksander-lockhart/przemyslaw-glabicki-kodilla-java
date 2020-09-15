@@ -1,11 +1,11 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
 public class Supplier {
-    String supplierId;
-    String typeOfProduct;
-    int itemQnt;
+    final String supplierId;
+    final String typeOfProduct;
+    final int itemQnt;
 
-    public Supplier(String supplierName, String typeOfProduct, int itemQnt) {
+    public Supplier(final String supplierName, final String typeOfProduct, final int itemQnt) {
         this.supplierId = supplierName;
         this.typeOfProduct = typeOfProduct;
         this.itemQnt = itemQnt;
@@ -22,4 +22,5 @@ public class Supplier {
     public int getItemQnt() {
         return itemQnt;
     }
+
 }
