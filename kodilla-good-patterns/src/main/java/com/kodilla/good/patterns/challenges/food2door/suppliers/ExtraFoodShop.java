@@ -1,8 +1,5 @@
 package com.kodilla.good.patterns.challenges.food2door.suppliers;
 
-import com.kodilla.good.patterns.challenges.food2door.Supplier;
-import com.kodilla.good.patterns.challenges.food2door.SupplierOrderRequest;
-
 import java.time.LocalDateTime;
 
 public class ExtraFoodShop implements SupplierProcess {

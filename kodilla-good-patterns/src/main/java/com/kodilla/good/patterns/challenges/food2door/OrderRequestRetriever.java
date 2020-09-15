@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import com.kodilla.good.patterns.challenges.food2door.Supplier;
-import com.kodilla.good.patterns.challenges.food2door.SupplierOrderRequest;
+import com.kodilla.good.patterns.challenges.food2door.suppliers.Supplier;
 
 import java.time.LocalDateTime;
 
