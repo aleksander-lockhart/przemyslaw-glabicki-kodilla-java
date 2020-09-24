@@ -10,10 +10,6 @@ buildscript {
     }
 }
 
-springBoot {
-    mainClassName = 'com.kodilla'
-}
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
