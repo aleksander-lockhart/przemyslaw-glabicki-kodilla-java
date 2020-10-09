@@ -25,7 +25,7 @@ public final class Board extends Prototype {
 
     @Override
     public String toString() {
-        String s = "Board [" + name + "]\n";
+        String s = "com.kodilla.sudoku.Board [" + name + "]\n";
         for(TasksList list : lists) {
             s = s + list.toString() + "\n";
         }

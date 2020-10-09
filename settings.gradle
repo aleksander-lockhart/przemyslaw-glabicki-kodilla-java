@@ -11,4 +11,5 @@ include 'com.testing'
 include 'com.kodilla.patterns'
 include 'kodilla-patterns'
 include 'kodilla-jdbc'
+include 'kodilla-sudoku'
 

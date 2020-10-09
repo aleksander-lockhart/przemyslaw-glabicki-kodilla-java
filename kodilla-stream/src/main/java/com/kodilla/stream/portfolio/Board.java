@@ -29,7 +29,7 @@ public final class Board {
 
     @Override
     public String toString() {
-        return "Board{" + "\n" +
+        return "com.kodilla.sudoku.Board{" + "\n" +
                 "name='" + name + '\'' + ",\n" +
                 "taskLists=" + taskLists + "\n" +
                 '}';
