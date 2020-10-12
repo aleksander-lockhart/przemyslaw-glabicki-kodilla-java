@@ -23,6 +23,9 @@ public class UserDialogs {
             if (result.length() == 3) {
                 break;
             }
+            else {
+                System.out.println("Wrong input!");
+            }
         }
         return result;
     }
