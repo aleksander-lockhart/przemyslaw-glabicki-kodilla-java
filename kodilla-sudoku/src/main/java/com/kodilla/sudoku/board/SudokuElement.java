@@ -6,7 +6,7 @@ import java.util.List;
 public class SudokuElement {
 
     private Integer value;
-    private List<Integer> allowedValues = new ArrayList<>();
+    private final List<Integer> allowedValues = new ArrayList<>();
     public final static int EMPTY = -1;
 
     public SudokuElement() {
