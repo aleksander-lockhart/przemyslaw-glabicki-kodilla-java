@@ -29,7 +29,7 @@ public class InvoiceDaoTestSuite {
         //Given
         Product product1 = new Product("Gumka do golenia lustra");
         Product product2 = new Product("Krawat ze skomplikowaną instrukcją obsługi");
-        Product product3 = new Product("Wywabiacz do szefów");
+        Product product3 = new Product("Wywiabiacz do szefów");
 
         Item item1 = new Item(10, new BigDecimal(100),
                 new BigDecimal(1000));
@@ -41,10 +41,6 @@ public class InvoiceDaoTestSuite {
         item1.setProduct(product1);
         item2.setProduct(product2);
         item3.setProduct(product3);
-
-        product1.getItems().add(item1);
-        product2.getItems().add(item2);
-        product3.getItems().add(item3);
 
         Invoice invoice = new Invoice("2018/1");
         invoice.getItems().add(item1);
@@ -75,7 +71,7 @@ public class InvoiceDaoTestSuite {
             productDao.deleteById(product3Id);
             invoiceDao.deleteById(invoiceId);
         } catch (Exception e) {
-//            do nothing
+            //do nothing
         }
     }
 }
