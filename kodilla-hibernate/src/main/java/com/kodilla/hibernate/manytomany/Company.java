@@ -10,7 +10,10 @@ import java.util.List;
         query ="SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :SPECIFIEDSUBSTRING",
         resultClass = Company.class
 )
-
+@NamedQuery(
+        name = "Company.searchByNameFragment",
+        query = "FROM Company WHERE name LIKE :ARG"
+)
 
 @Entity
 @Table(name = "COMPANIES")
@@ -29,7 +32,7 @@ public class Company {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "COMPANY_ID", unique = true)
+    @Column(name = "COMPANY_ID")
     public int getId() {
         return id;
     }
@@ -49,11 +52,11 @@ public class Company {
         this.employees = employees;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
