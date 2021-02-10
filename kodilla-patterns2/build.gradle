@@ -1,23 +1,32 @@
-plugins {
-    id 'org.springframework.boot' version '2.4.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
+buildscript {
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
 
 group = 'com.kodilla'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'junit:junit:4.12'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
 
-test {
-    useJUnitPlatform()
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }
